@@ -1,0 +1,103 @@
+# Project: Project-8085 Simulator
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = Main-8085.o checkAddr.o Instructiontype.o updatePC.o MVI.o instructionCenter.o Add.o LXI.o MOV.o LHLD.o SUB.o INR.o LDA.o ADI.o ComputeParity.o DCR.o CMP.o SUI.o STA.o CMA.o JNC.o JNZ.o XCHG.o JC.o JMP.o JZ.o
+LINKOBJ  = Main-8085.o checkAddr.o Instructiontype.o updatePC.o MVI.o instructionCenter.o Add.o LXI.o MOV.o LHLD.o SUB.o INR.o LDA.o ADI.o ComputeParity.o DCR.o CMP.o SUI.o STA.o CMA.o JNC.o JNZ.o XCHG.o JC.o JMP.o JZ.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Project-8085 Simulator.exe"
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Main-8085.o: Main-8085.cc
+	$(CPP) -c Main-8085.cc -o Main-8085.o $(CXXFLAGS)
+
+checkAddr.o: checkAddr.cpp
+	$(CPP) -c checkAddr.cpp -o checkAddr.o $(CXXFLAGS)
+
+Instructiontype.o: Instructiontype.cpp
+	$(CPP) -c Instructiontype.cpp -o Instructiontype.o $(CXXFLAGS)
+
+updatePC.o: updatePC.cpp
+	$(CPP) -c updatePC.cpp -o updatePC.o $(CXXFLAGS)
+
+MVI.o: MVI.cpp
+	$(CPP) -c MVI.cpp -o MVI.o $(CXXFLAGS)
+
+instructionCenter.o: instructionCenter.cc
+	$(CPP) -c instructionCenter.cc -o instructionCenter.o $(CXXFLAGS)
+
+Add.o: Add.cc
+	$(CPP) -c Add.cc -o Add.o $(CXXFLAGS)
+
+LXI.o: LXI.cc
+	$(CPP) -c LXI.cc -o LXI.o $(CXXFLAGS)
+
+MOV.o: MOV.cc
+	$(CPP) -c MOV.cc -o MOV.o $(CXXFLAGS)
+
+LHLD.o: LHLD.cpp
+	$(CPP) -c LHLD.cpp -o LHLD.o $(CXXFLAGS)
+
+SUB.o: SUB.cc
+	$(CPP) -c SUB.cc -o SUB.o $(CXXFLAGS)
+
+INR.o: INR.cc
+	$(CPP) -c INR.cc -o INR.o $(CXXFLAGS)
+
+LDA.o: LDA.cc
+	$(CPP) -c LDA.cc -o LDA.o $(CXXFLAGS)
+
+ADI.o: ADI.cc
+	$(CPP) -c ADI.cc -o ADI.o $(CXXFLAGS)
+
+ComputeParity.o: ComputeParity.cc
+	$(CPP) -c ComputeParity.cc -o ComputeParity.o $(CXXFLAGS)
+
+DCR.o: DCR.cpp
+	$(CPP) -c DCR.cpp -o DCR.o $(CXXFLAGS)
+
+CMP.o: CMP.cc
+	$(CPP) -c CMP.cc -o CMP.o $(CXXFLAGS)
+
+SUI.o: SUI.cc
+	$(CPP) -c SUI.cc -o SUI.o $(CXXFLAGS)
+
+STA.o: STA.cpp
+	$(CPP) -c STA.cpp -o STA.o $(CXXFLAGS)
+
+CMA.o: CMA.cc
+	$(CPP) -c CMA.cc -o CMA.o $(CXXFLAGS)
+
+JNC.o: JNC.cc
+	$(CPP) -c JNC.cc -o JNC.o $(CXXFLAGS)
+
+JNZ.o: JNZ.cc
+	$(CPP) -c JNZ.cc -o JNZ.o $(CXXFLAGS)
+
+XCHG.o: XCHG.cpp
+	$(CPP) -c XCHG.cpp -o XCHG.o $(CXXFLAGS)
+
+JC.o: JC.cc
+	$(CPP) -c JC.cc -o JC.o $(CXXFLAGS)
+
+JMP.o: JMP.cc
+	$(CPP) -c JMP.cc -o JMP.o $(CXXFLAGS)
+
+JZ.o: JZ.cc
+	$(CPP) -c JZ.cc -o JZ.o $(CXXFLAGS)
